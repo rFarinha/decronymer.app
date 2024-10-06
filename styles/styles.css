@@ -1,61 +1,66 @@
-body, .container {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    justify-content: center; /* Center the children horizontally */
-    align-items: center; /* Center the children vertically */
-    background-color: rgb(254, 255, 246);
-  }
-
-h1 {
-    font-size: 50px;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%; /* Make the body and HTML fill the height of the viewport */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: rgb(254, 255, 246);
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex; 
-    flex-wrap: wrap;   
+  display: flex;
+  justify-content: center; /* Center the left and right sections horizontally */
+  align-items: center; /* Align the sections vertically */
+  flex-wrap: wrap; /* Ensure responsiveness on smaller screens */
+  text-align: center; /* Center the text within the sections */
 }
 
-/* Style the left and right sections */
+h1 {
+  font-size: 50px;
+}
+
 .left-section, .right-section {
-    flex: 1; /* Make both sections grow to fill available space equally */
-    padding: 20px; /* Add spacing between sections and edges */
-    box-sizing: border-box; /* Include padding in section width calculation */
-    max-width: 100%; /* Limit the maximum width of each section to 50% */
+  flex: 1; /* Allow sections to take equal space */
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 100%; /* Make sure sections don’t exceed the width */
 }
 
-.left-section {
-    text-align: right;
-}
-
-/* Add media query for mobile responsiveness */
-@media (max-width: 768px) {
-    .left-section, .right-section {
-        flex-basis: 100%; /* Set each section to take up full width on small screens */
-    }
+/* Ensure image stays centered in left section */
+.left-section img {
+  max-width: 100%; /* Keep image responsive */
+  height: auto; /* Maintain image aspect ratio */
+  display: block; /* Ensure proper block formatting context */
+  margin: 0 auto; /* Center the image */
 }
 
 .button {
-    background-color: #23272a; /* Green */
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 24px;
-  }
+  background-color: #23272a;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 24px;
+}
 
-  .button:hover {
-    background-color: RoyalBlue;
+.button:hover {
+  background-color: RoyalBlue;
+}
+
+i {
+  margin-right: 10px;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .left-section, .right-section {
+      flex-basis: 100%; /* Stack sections vertically on smaller screens */
   }
-  
-  i {
-    margin-right: 10px;
-  }
+}
