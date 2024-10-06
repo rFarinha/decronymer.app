@@ -1,0 +1,61 @@
+body, .container {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    justify-content: center; /* Center the children horizontally */
+    align-items: center; /* Center the children vertically */
+    background-color: rgb(254, 255, 246);
+  }
+
+h1 {
+    font-size: 50px;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex; 
+    flex-wrap: wrap;   
+}
+
+/* Style the left and right sections */
+.left-section, .right-section {
+    flex: 1; /* Make both sections grow to fill available space equally */
+    padding: 20px; /* Add spacing between sections and edges */
+    box-sizing: border-box; /* Include padding in section width calculation */
+    max-width: 100%; /* Limit the maximum width of each section to 50% */
+}
+
+.left-section {
+    text-align: right;
+}
+
+/* Add media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .left-section, .right-section {
+        flex-basis: 100%; /* Set each section to take up full width on small screens */
+    }
+}
+
+.button {
+    background-color: #23272a; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 24px;
+  }
+
+  .button:hover {
+    background-color: RoyalBlue;
+  }
+  
+  i {
+    margin-right: 10px;
+  }
