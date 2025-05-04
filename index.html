@@ -13,16 +13,50 @@
         <h1>Decronymer</h1>
         <p>Copy an acronym text and the meaning will popup!</p>
         <div>
-          <a class="button" hred="" href="https://github.com/rFarinha/decronymer"><i class="fa-brands fa-windows"></i>Download for Windows</a> 
+          <a class="button" id="download-windows" href="https://github.com/rFarinha/Decronymer/releases/latest">
+            <i class="fa-brands fa-windows"></i>Download for Windows</a> 
           <a class="button" hred="" href="https://github.com/rFarinha/decronymer"> 
             <i class="fa-brands fa-github"></i>
             Support on Github
           </a> 
         </div>
+        <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+          <script>
+            kofiWidgetOverlay.draw('rfarinha', {
+              'type': 'floating-chat',
+              'floating-chat.donateButton.text': 'Donate',
+              'floating-chat.donateButton.background-color': '#00b9fe',
+              'floating-chat.donateButton.text-color': '#fff'
+            });
+          </script>
       </div>
       <div class="right-section">
         <img src="images/notification-example.png">
     </div>
     </div>
+    <script>
+      // Fetch the latest release from GitHub
+      fetch('https://api.github.com/repos/rFarinha/Decronymer/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+          // Look for Windows executable
+          const windowsAsset = data.assets.find(asset => 
+            asset.name.toLowerCase().includes('setup.exe') || 
+            asset.name.toLowerCase().includes('windows')
+          );
+          
+          if (windowsAsset) {
+            // Update the download button with the direct download link
+            document.getElementById('download-windows').href = windowsAsset.browser_download_url;
+          } else {
+            // Fallback to latest release page if no Windows asset found
+            document.getElementById('download-windows').href = data.html_url;
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching latest release:', error);
+          // Keep the default link to latest releases page on error
+        });
+    </script>
   </body>
 </html>
