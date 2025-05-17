@@ -135,3 +135,7 @@ i {
     height: 36px; /* Match the smaller heading size */
   }
 }
+
+#wiki {
+  margin-top: 20px;
+}
