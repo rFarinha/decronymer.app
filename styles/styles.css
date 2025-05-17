@@ -18,7 +18,22 @@ body, html {
 }
 
 h1 {
-  font-size: 50px;
+font-size: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logo-container {
+  display: inline-block;
+  width: 50px; /* Control the space this takes */
+  overflow: visible;
+}
+.logo-letter {
+  height: 50px;
+  transform: scale(1);
+  transform-origin: left center;
+  vertical-align: middle;
 }
 
 .left-section, .right-section {
