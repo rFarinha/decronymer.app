@@ -75,8 +75,16 @@ justify-content: center;
   border-radius: 24px;
 }
 
-.button:hover {
+.button.download {
   background-color: RoyalBlue;
+}
+
+.button:hover {
+  background-color: rgb(102, 102, 102);
+}
+
+.button.download:hover {
+  background-color: rgb(38, 83, 219);
 }
 
 i {
@@ -87,5 +95,43 @@ i {
 @media (max-width: 768px) {
   .left-section, .right-section {
       flex-basis: 100%; /* Stack sections vertically on smaller screens */
+  }
+}
+
+/* Style for disabled button */
+.button.disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.button.disabled:hover {
+  background-color: #6c757d; /* Prevent hover effect on disabled button */
+}
+
+/* Make sure the download buttons section has proper spacing */
+#download-buttons {
+  margin-bottom: 16px;
+}
+
+/* Add a little spacing between buttons when they stack on mobile */
+#download-buttons .button {
+  margin-bottom: 10px;
+}
+
+/* Improve responsive design for small screens */
+@media (max-width: 480px) {
+  .button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 36px; /* Smaller heading on mobile */
+  }
+  
+  .logo-letter {
+    height: 36px; /* Match the smaller heading size */
   }
 }
