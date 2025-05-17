@@ -36,6 +36,16 @@ h1 {
   margin: 0 auto; /* Center the image */
 }
 
+/* Video styling */
+.right-section video {
+  max-width: 100%; /* Keep video responsive */
+  height: 400px; /* Maintain video aspect ratio */
+  display: block; /* Ensure proper block formatting context */
+  margin: 0 auto; /* Center the video */
+  border-radius: 8px; /* Optional: add rounded corners */
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add subtle shadow */
+}
+
 .button {
   background-color: #23272a;
   border: none;
